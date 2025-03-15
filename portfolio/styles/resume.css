@@ -1,0 +1,134 @@
+/* Try to follow order of typography, layout, colors in styling */
+
+/* Universal selector, set font for site, reset default styles */
+* {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling with background image */
+body {
+    position: relative;
+    background: url(../images/resume-background.jpg) center center fixed;
+    background-size: cover;
+}
+
+/* Main container enveloping entire body */
+.container {
+    line-height: 2;
+    padding: 20px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 0 auto; /* Aligns container to center of page regardless of screen width */
+    max-width: 1300px; /* Prevents header, sections, and footer from being too long at long screen widths */
+}
+
+/* Header styling */
+header {
+    text-align: center;
+    width: 100%;
+    padding: 30px 20px;
+    border-radius: 20px;
+    background:rgba(255, 255, 255, 1);
+}
+
+/* h1 styling */
+header h1 {
+    font-size: 40px; /* Larger text size on name */
+    color: black;
+}
+
+/* Header paragraph styling */
+header p {
+    line-height: 2; /* Takes prioerity over the later p styling */
+    color: #274568;
+}
+
+/* Contact Text */
+.contacts {
+    text-decoration: none;
+    margin: 2px; /* Spacing between contacts with links and "|" symbols */
+    color: #3a99cf;
+}
+
+/* Contact Icons */
+.contact_icons {
+    width: 14px;
+    height: 14px;
+    margin-right: 5px;
+}
+
+/* Hover effect on links */
+a:hover {
+    opacity: .7;
+}
+
+/* Section Styling */
+section {
+    flex: 1 1 calc(50% - 20px); /* Two visual 'columns' at wide device widths */
+    padding: 20px 30px;
+    margin: 10px 0px;
+    border-radius: 20px;
+    transition: transform 0.3s ease;
+    background: rgba(255, 255, 255, 1);
+}
+
+/* Section 'titles' */
+section h2 {
+    border-bottom: 2px solid #ced6db; /* Division between 'title' and 'content' of the section */
+    margin-bottom: 10px;
+    color: #274568;
+}
+
+/* Section 'subtitles' */
+section h3 {
+    color: #1c587b;
+}
+
+/* Section main 'content' */
+section p, section ul {
+    line-height: 1.5;
+    color: #44697f;
+}
+
+section ul {
+    padding-left: 20px; /* Indents the list items under the paragraphs */
+}
+
+/* Hover effect on sections */
+section:hover {
+    transform: translateY(-5px);
+}
+
+/* Footer styling */ 
+footer {
+    text-align: center;
+    width: 100%;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border-radius: 20px;
+    background:rgba(255, 255, 255, 1);
+}
+
+/* Media queries for small screens (e.g. phones) */
+@media screen and (max-width: 576px) {
+    body {
+        padding: 15px 15px; /* Reduced padding so readable content fills more space */
+    }
+    
+    .container {
+        gap: 10px /* Smaller gaps for less empty space */
+    }
+
+    header h1 {
+        font-size: 35px /* Smaller resume name */
+    }
+    
+    section {
+        flex: 1 1 calc(100%);
+        margin-bottom: 0px; /* Decreased margins for less empty space */
+    }
+}

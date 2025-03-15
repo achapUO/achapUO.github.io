@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to Xiao</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/navbar.css">
+</head>
+<body>
+    <!-- Sticky Navigation Bar -->
+     <nav>
+        <a href="index.html" class="logo">PROJECT</a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Me</a>
+            <a href="#guides">Guides</a>
+        </div>
+        <button class="nav-menu-button">☰</button>
+     </nav>
+
+    <!-- Header section -->
+    <header>
+        <h1>XIAO</h1>
+        <p>A yaksha adeptus who defends Liyue. Also heralded as the "Conqueror of Demons" and "Vigilant Yaksha."</p>
+    </header>
+
+    <!-- Character introduction section -->
+    <section class="light-background">
+        <h2>Character Introduction</h2>
+        <h3><a href="https://www.hoyolab.com/article/152761" target="_blank" id="intro-link">On His Majesty's Sacred Service: The Conqueror of Demons</a></h3> <!-- Links to below texts' source -->
+        <div class="intro-grid">
+            <div class="intro-text"> <!-- Keeps text (the intro and description) grouped together in the .intro-grid grid layout -->
+                <div class="intro-quote">
+                    <p>"By honoring his oath as a yaksha, one hopes that our fellow adeptus has now finally gained some respite from the grievances that have burdened him all these millennia."</p>
+                    <p id="intro-quote-source">— Adeptus Streetward Rambler comments ruefully during a game of chess</p>
+                </div>
+                <div class="intro-description">
+                    <p>The people of Liyue Harbor greatly revere the mighty and illuminated adepti who dwell in Jueyun Karst.</p>
+                    <p>During the festival seasons, they will offer up incense and pray to the adepti for their protection.</p>
+                    <p>But none pray to Xiao.</p>
+                    <p>For Xiao is no lucky star that promises fame and fortune — he is a demon-hunting Yaksha.</p>
+                    <p>After the lantern lights of Liyue have faded, the thankless battle to protect the city goes on unseen. It is an endless battle, and there can be no victor.</p>
+                    <p>Still, none of this fazes Xiao, for as the Vigilant Yaksha, he must protect Liyue to honor his contract.</p>
+                    <p>This is simply the way it is.</p>
+                </div>
+            </div>
+            <div class="intro-image-container"> <!-- Allows image to be positioned within the larger container -->
+                <img class="intro-image" src="images/xiao-birthday-art.jpeg" alt="Xiao in his 2024 birthday art">
+            </div>
+        </div>
+    </section>
+
+    <!-- Trailer section -->
+    <section class="trailer dark-background">
+        <h2>"Endless Suffering"</h2>
+        <h3>A Short Trailer</h3>
+        <div class="trailer-flex">
+            <div class="trailer-video-container">
+                <iframe class="trailer-video"
+                src="https://www.youtube.com/embed/3RLhCbVtjEg?si=PMHajK6GvdJegHWW" title="Endless Suffering | Short Trailer">
+                </iframe>
+            </div>
+            <div class="trailer-text">
+                <p>Long ago, there were people in Liyue Harbor who caught a glimpse of a shadow.</p>
+                <p>This solitary shadow was fleeting, and would quickly conceal himself amongst the lanterns.</p>
+                <p>All the hardships in the world have a name. This one is a millennium of doom that cannot be quelled nor eradicated.</p>
+                <p>Even the occasional respite is but ephemeral, and cannot give rise to hope.</p>
+             </div>
+        </div>
+    </section>
+
+    <!-- Playstyle & Build guide section -->
+    <section class="light-background" id="guides">
+        <h2 class="header-without-subtitle">Playstyle & Build Guides</h2>
+        <div class="guides-flex">
+            <a href="https://keqingmains.com/" target="_blank" class="guides-box"> <!-- Anchor makes guide "boxes" clickable -->
+                    <div class="guides-text"> <!-- Keeps text (guide name and description/excerpt of guide) grouped together in the grid layout-->
+                        <p class="guide-name">KQM</p>
+                        <p>KQM is home to the best Genshin Impact guides and the most reputable theorycrafting community ...</p>
+                    </div>
+                    <img src="images/kqm-logo.png" alt="Keqing Mains site logo" class="guides-logo">
+            </a>
+            <a href="https://www.xiaomains.com/" target="_blank" class="guides-box">
+                <div class="guides-text">
+                    <p class="guide-name">Xiao Mains Guide</p>
+                    <p>An in depth guide to Xiao's builds, teams, and gameplay.</p>
+                </div>
+                <img src="images/xiao-mains-logo.png" alt="Xiao Mains Guide site logo" class="guides-logo">
+            </a>
+        </div>
+        <div class="recommendations">
+            <p>Want personalized recommendations?</p>
+            <!-- Button "opens" popup form -->
+            <button class="sign-up-button" onclick="document.getElementById('signup-form').style.display='block'">Sign Up!</button>
+        </div>
+
+        <!-- Form -->
+        <div id="signup-form" class="form-display">
+            <form>
+                <p>Build Recommendation Sign-Ups</p>
+
+                <!-- Discord username field input-->
+                <label for="discord">Discord Username and ID:</label>
+                <input type="text" id="discord" name="discord-user-id" required>
+
+                <!-- Genshin player server selection -->
+                <label for="player-server">Genshin Server:</label>
+                <select id="player-server" name="genshin-server" required>
+                    <option label=" "></option> <!-- Empty label needed in blank option for HTML validation -->
+                    <option value="america">America</option>
+                    <option value="europe">Europe</option>
+                    <option value="asia">Asia</option>
+                    <option value="tw-hk-mo">TW, HK, MO</option>
+                </select>
+
+                <!-- Genshin user ID input -->
+                <label for="player-id">Genshin UID:</label>
+                <input type="text" id="player-id" name="genshin-uid" required>
+
+                <!-- Submit & close buttons -->
+                <button class="form-button" type="submit">Submit!</button>
+                <button class="form-button" type="button" onclick="document.getElementById('signup-form').style.display='none'">Close</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Quotes section -->
+    <section class="quotes-background dark-background">
+        <h2>Rumored Reputations</h2>
+        <h3>Hear what some companions have to say...</h3>
+        <div class="quotes-grid">
+
+            <!-- Baizhu quote -->
+            <div class="quotes baizhu-quote">
+                <div class="quote-source"> <!-- Allows character image and name to be vertically aligned in relation to each other in the .quote-source flex display -->
+                    <img src="images/baizhu-sticker.png" alt="Sticker of Baizhu" class="quote-source-sticker">
+                    <span class="quote-source-name">Baizhu</span>
+                </div>
+                <p class="quote-descriptor">
+                    A master of medicinal arts, doctor, and the owner of Bubu Pharmacy.
+                </p>
+                <p>Only the most magnanimous soul could labor to preserve life by slaying evil spirits. I was once fortunate enough to see the Conqueror of Demons with my own eyes. We even brought him back to the pharmacy to take care of him for a day. Unfortunately, I did not know his true identity at the time, and didn't even have a chance to speak with him before he left on his own.</p>
+            </div>
+
+            <!-- Chongyun quote -->
+            <div class="quotes chongyun-quote">
+                <div class="quote-source">
+                    <img src="images/chonyun-sticker.png" alt="Sticker of Chongyun" class="quote-source-sticker">
+                    <p class="quote-source-name">Chongyun</p>
+                </div>
+                <p class="quote-descriptor">
+                    A boy exorcist with an excess of yang energy.
+                </p>
+                <p>The Conqueror of Demons himself has defended Liyue side-by-side with we exorcists for generations, day after day, night after night. I have the utmost respect for Adeptus Xiao. It's just... Why must he be so disparaging toward us? He says our repertoire is lacking and our power is trivial. I'm sorry, but I just can't accept that.</p>
+            </div>
+
+            <!-- Xianyun quote -->
+            <div class="quotes xianyun-quote">
+                <div class="quote-source">
+                    <img src="images/xianyun-sticker.png" alt="Sticker of Xianyun" class="quote-source-sticker">
+                    <p class="quote-source-name">Xianyun</p>
+                </div>
+                <p class="quote-descriptor">
+                    A mechanically inclined adeptus.
+                </p>
+                <p>The Conqueror of Demons is even more withdrawn than oneself — he has been sighted a mere handful of times at social gatherings over the centuries... One was interested to learn that you are on rather good terms with him — what sort of conversations do the two of you tend to have? Oh, and do let me know when you next plan to see him. Perhaps one could make some tofu pudding for you to pass on to him.</p>
+            </div>
+
+            <!-- Shenhe quote -->
+            <div class="quotes shenhe-quote">
+                <div class="quote-source">
+                    <img src="images/shenhe-sticker.png" alt="Sticker of Shenhe" class="quote-source-sticker">
+                    <p class="quote-source-name">Shenhe</p>
+                </div>
+                <p class="quote-descriptor">
+                    A human raised as an adeptus disciple under Xianyun's care.
+                </p>
+                <p>My first impression of him was that he's not one to smile. After meeting him again more recently, however, he's still as reserved as ever, but... he seems a lot more relaxed now. Maybe he... met someone special.</p>
+            </div>
+
+            <!-- Zhongli quote -->
+            <div class="quotes zhongli-quote">
+                <div class="quote-source">
+                    <img src="images/zhongli-sticker.png" alt="Sticker of Zhongli" class="quote-source-sticker">
+                    <p class="quote-source-name">Zhongli</p>
+                </div>
+                <p class="quote-descriptor">
+                    The human alias of the God of Contracts and Geo Archon, Morax.
+                </p>
+                <p>You speak of the young adeptus of Guili Plains... *sigh* Still fulfilling his duty to this very day. Please give this Remedium Tertiorum to him on my behalf. Oh, yes... be sure not to let Paimon eat them. Nothing of this world can withstand the power of this medicine.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- News section -->
+    <section class="light-background">
+        <h2 class="header-without-subtitle">Recent News</h2>
+        <div class="news-flex">
+
+            <!-- First news "box" -->
+            <a href="https://x.com/GenshinImpact/status/1873580029608689762" target="_blank" class="news-box"> <!-- Anchor makes news "boxes" clickable -->
+                <img src="images/chronicled-wish.jpg" alt="Preview showing the characters Ganyu, Qiqi, Childe, and Xiao." class="news-image">
+                <div class="news-text">
+                    <div class="media-site"><p>via X.com</p></div> <!-- div and p needed so that ".media-site p" can override ".light-background p" in CSS -->
+                    <div class="media-text">
+                        <p>Version 5.3 Event Wishes Notice - Phase II</p>
+                        <p>Dear Traveler, the event wishes "The Hearth's Ashen Shadow," "Illuminating Lightning," "Epitome Invocation," and Chronicled Wish "Remembrance ...</p>
+                    </div>
+                </div>
+            </a>
+            
+            <!-- Second news "box" -->
+            <a href="https://x.com/GenshinUpdate/status/1882006767112241514" target="_blank" class="news-box">
+                <img src="images/guizhou-collab.jpg" alt="A confused Xiao looking at a map." class="news-image">
+                <div class="news-text">
+                    <div class="media-site"><p>via X.com</p></div>
+                    <div class="media-text">
+                        <p>Illustrations from Genshin Impact x Guizhou Collaboration ...</p>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Third news "box" -->
+            <a href="https://www.hoyolab.com/article/25026242" target="_blank" class="news-box">
+                <img src="images/paimon-painting.jpg" alt="Sticker of Xiao flustered by Zhongli offering a red envelope." class="news-image">
+                <div class="news-text">
+                    <div class="media-site"><p>via HoYoLAB</p></div>
+                    <div class="media-text">
+                        <p>Greetings, Travelers! The latest emojis from Genshin Impact are now available on HoYoLAB~</p>
+                        <p>Paimon's Paintings include a collection of chibi emojis of various Genshin Impact characters ...</p>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Fourth news "box" -->
+            <a href="https://www.reddit.com/r/Genshin_Impact/comments/1hij7f4/version_53_incandescent_ode_of_resurrection/" target="_blank" class="news-box">
+                <img src="images/incandescent.jpg" alt="Xiao in the version 5.3 trailer." class="news-image">
+                <div class="news-text">
+                    <div class="media-site"><p>via Reddit</p></div>
+                    <div class="media-text">
+                        <p>Version 5.3 "Incandescent Ode of Resurrection" Trailer</p>
+                        <p>The prophecy has proclaimed the price of life, but it has not extinguished the remnants of hope ...</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </section>
+    <footer>
+        <p>© All rights reserved by miHoYo.</p>
+    </footer>
+
+</html>

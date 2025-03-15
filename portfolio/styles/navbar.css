@@ -1,0 +1,59 @@
+/* Navigation Styling */
+
+nav {
+    padding: 15px 30px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif; /* Same font as main.css */
+    display: flex;
+    position: sticky;
+    top: 0;
+    background-color: rgb(255, 255, 255);
+    z-index: 1000; /* Keeps navigation above other elements */
+    justify-content: space-between;
+    box-shadow: 0px 0px 10px rgba(44, 70, 108, .1); /* Subtle box shadow to stand out against white backgrounds on the site, since navbar is solid */
+    align-items: center;
+}
+
+nav a {
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: rgb(16,62,84);
+    transition: color 0.3s ease;
+    font-size: 1em;
+}
+
+.nav-links a:hover {
+    color: rgb(38, 110, 143);
+}
+
+.logo {
+    font-size: 1.6em;
+    font-weight: bold; /* Makes logo stand out more */
+    color: #006dad;
+}
+
+.nav-menu-button {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    color: rgb(16,62,84);
+}
+
+/* Media Queries */
+
+@media (max-width: 767px) { /* Screen sizes smaller than iPad air */
+    .nav-links {
+        display: none; /* Would be changed properly when implementing JavaScript */
+    }
+    
+    .nav-menu-button {
+        display: block;
+    }
+}

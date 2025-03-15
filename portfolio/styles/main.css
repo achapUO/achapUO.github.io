@@ -1,0 +1,509 @@
+/* Try to follow order of layout, typography, colors in styling */
+
+/* Reset default styles and set base font */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+}
+
+/* General styling */
+
+section {
+    padding: 40px 40px;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+h2 {
+    font-size: 2em;
+}
+
+h3 {
+    margin-top: 10px; /* Puts more space between h2 and h3 */
+    text-align: center;
+}
+
+.header-without-subtitle {
+    margin-bottom: 40px; /* Puts some space between header and other content that would usually be taken by an h3 "subtitle" */
+}
+
+p {
+    margin: 1em 0em;
+    line-height: 1.5em;
+    font-size: .9em;
+}
+
+button:hover {
+    cursor: pointer; /* Helps indicate that buttons are clickable */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 7.5px; /* A bit of spacing between pairs of labels and inputs, and buttons */
+    text-align: center;
+    font-weight: bold;
+}
+
+form p {
+    margin: .75em 0; /* Smaller margin than usual p to keep form reasonably small */
+    font-size: 1.5em; /* Larger than usual p size because it acts as a "header" of the form */
+}
+
+input, select {
+    border-style: solid;
+    border-radius: 5px; /* Small border radius because input/select fields/dropdown areas are relatively small */
+    border-width: 1px;
+    border-color: rgb(180, 180, 180);
+    height: 2.5em; /* Adds height to input/select fields/dropdown areas so they look like they would accomodate the font of the labels */
+    margin-bottom: 2px; /* Just a little bit more spacing at the bottom between each label & input or select pair so they look more seperate visually */
+}
+
+/* Styling for sections with light backgrounds */
+
+.light-background {
+    background-color:rgb(245, 245, 245);
+}
+
+.light-background h1, .light-background h2 {
+    color: #2c466c;
+}
+
+.light-background p {
+    color: rgb(16,62,84) /* Slightly darker than .light-background h2 for readability */
+}
+
+/* Styling for sections with darker backgrounds */
+
+.dark-background h2 {
+    color: white;
+}
+
+.dark-background h3 {
+    color: #d6fff7;
+}
+
+/* Header styling */
+
+header {
+    padding: 135px 40px; /* Same left and right padding distance as sections */
+    text-align: center;
+    background: url(../images/background.png) center top; /* center and top values keep the character in frame at smaller screen widths */
+    background-size: cover;
+}
+
+header h1 {
+    color: #ffffff;
+    font-family: 'Times New Roman', Times, serif; /* Unique font from rest of page to stand out */
+    font-size: 5em;
+    padding: 20px;
+}
+
+header p {
+    font-size: 1.1em;
+    color: rgba(241, 254, 255, 0.9);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Slight text shadow for readability */
+}
+
+/* Character Introduction styling */
+
+#intro-link {
+    text-decoration: none;
+    font-style: italic;
+    color: #22beb5;
+    transition: color 0.3s ease;
+}
+
+#intro-link:hover {
+    text-decoration: underline; /* Makes anchor more clearly a link */
+    color: #54dbd4;
+}
+
+.intro-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* More space for text, less for image */
+    gap: 25px; /* Gap size consistent across most grid and flex "containers" */
+    justify-content: center;
+    margin: 0px auto; /* Horizontally centers grid on page */
+    max-width: 1150px; /* Max width consistent across most grid and flex "containers" */
+}
+
+.intro-quote {
+    padding: 20px 20px; /* Keeps quote visually seperate from the text beneath */
+    margin: 0 40px; /* Horizonally centers quote in the 2fr column that the intro-text div occupies */
+}
+
+#intro-quote-source {
+    margin-left: 3em;
+}
+
+.intro-image-container {
+    display: flex;
+    align-items: center; /* Vertically centers image in the column that the intro-image-container div occupies */
+}
+
+.intro-image {
+    object-fit: cover;
+    border-radius: 15px; /* Border radius consistent with most others */
+    margin: 0 auto; /* Horizontally centers image in the column that the intro-image-container div occupies */
+    height: 400px;
+    width: 250px;
+}
+
+/* Trailer video styling */
+
+.trailer {
+    background: linear-gradient(10deg, rgba(26,62,103,1) 0%, rgba(24,77,120,1) 40%, rgba(42,143,167,1) 100%); /* Similar colors to header */
+}
+
+.trailer-flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px; /* Gap consistent across most grid and flex "containers" */
+    margin: 20px auto; /* Horizontally centers flex "container" on page */
+    max-width: 1000px; /* Max width slightly smaller than most grid and flex "containers" to prevent text from stretching too far horizontally */
+}
+
+.trailer-flex div {
+    flex: 1 1 calc(50% - 25px); /* Two visual 'columns' at wide device widths */
+}
+
+.trailer-video-container {
+    aspect-ratio: 16 / 9; /* Standard aspect ratio of most YouTube videos */
+	height: 100%;
+	width: 100%;
+}
+
+.trailer-video {
+    height: 100%;
+    width: 100%;
+}
+
+.trailer-text {
+    color: white;
+}
+
+/* Playstyle & Build Guides styling */
+
+.guides-flex {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto; /* Horizontally centers flex "container" on page */
+    gap: 25px; /* Gap consistent across most grid and flex "containers" */
+    max-width: 1000px; /* Max width slightly smaller than most grid and flex "containers" to keep ".guide-box"es from stretching too far horizontally */
+}
+
+.guides-flex a {
+    flex: 1 1 calc(50% - 25px); /* Two visual 'columns' at wide device widths */
+    text-decoration: none; /* Removes underline from all the text in the ".guides-box"es */
+}
+
+.guides-box {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    border-radius: 15px; /* Border radius consistent with most others */
+    padding: 10px 10px;
+    background-color: white;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Consistent transitions */
+}
+
+.guides-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 5px 10px rgba(44, 70, 108, .1);
+}
+
+.guides-text {
+    padding: 10px 10px;
+}
+
+.guide-name {
+    font-size: 1.5em; /* Text larger than usual p but smaller than h2 and h3 */
+    margin: 0; /* Removes usual p margin to be closer to text below and border above */
+}
+
+.guides-logo {
+    margin: auto auto; /* Vertically and horizontally centers logo images in the column they occupy */
+    width: 150px;
+    height: 150px; /* Same width/height as the news images */
+}
+
+.recommendations {
+    text-align: center;
+    margin: auto 0; /* Horizontally sections text on the page */
+    margin-top: 40px; /* Distance from the guide recommendation "boxes" above */
+}
+
+.recommendations p {
+    font-size: 1em; /* Slightly larger than usual p */
+}
+
+.sign-up-button {
+    border: none;
+    border-radius: 10px; /* Smaller border radius than usual because button is relatively small */
+    padding: 15px 40px;
+    font-size: 1em;
+    font-weight: bold;
+    color: white;
+    background-color: #3eaabc;
+    transition: background-color 0.3s ease;
+}
+
+.sign-up-button:hover {
+    background-color: #3591a1; /* Darkens on hover */
+}
+
+.form-button {
+    border: none;
+    border-radius: 10px; /* Smaller border radius than usual because button is relatively small */
+    padding: 10px;
+    font-size: 1em;
+    color: white;
+    background-color: #298fa1;
+    transition: background-color 0.3s ease;
+}
+
+.form-button:hover {
+    background-color: #40aabc; /* Lightens on hover */
+}
+
+.form-display {
+    display: none;
+    position: fixed;
+    border-radius: 15px; /* Border radius consistent with most others */
+    padding: 20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* top, left, and transform property-value pairs center the form on the screen */
+    background-color: white;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25); /* Makes form background stand out again the white guide recommendation "boxes" behind it */
+    width: 325px; /* Keeps form narrow rather than taking full space of the form p */
+}
+
+/* Quotes ("Reputations") section styling */
+
+.quotes-background {
+    background-color: #185177;
+}
+
+.quotes-background h3 {
+    font-weight: normal; /* Looks better than bold with longer text */
+}
+
+.quotes-grid {
+    display: grid;
+    grid-template-columns: .7fr .5fr .5fr .9fr;
+    grid-template-rows: repeat(2, 1fr);
+    max-width: 1150px; /* Max width consistent across most grid and flex "containers" */
+    margin: 20px auto; /* Horizontally centers grid on page */
+    gap: 20px; /* Smaller gap than usual to space quote "boxes" closer together */
+}
+
+.quotes {
+    border-radius: 15px; /* Border radius consistent with most others */
+    padding: 10px 25px;
+    color:#2c466c;
+    background-color: white;
+}
+
+.quote-source {
+    display: flex; /* Allows the image of a character being quoted and their name to be vertically aligned in relation to each other */
+    flex-wrap: wrap;
+    margin-top: 14px; /* Matches the padding at the bottom from p */
+    margin-bottom: 0px; /* Overrides usual */
+}
+
+.quote-source-sticker {
+    border-radius: 15px;
+    height: 45px;
+    width: 45px;
+}
+
+.quote-source-name {
+    margin: auto 10px; /* Vertically aligns characters' names with their image */
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.quote-descriptor {
+    margin-top: 5px; /* A bit of spacing from characters' name and image */
+    font-style: italic;
+}
+
+.baizhu-quote {
+    grid-area: 1 / 1 / 1 / span 2;
+}
+
+.chongyun-quote {
+    grid-area: 2 / 1 / 2 / span 2;
+}
+
+.xianyun-quote {
+    grid-area: 1 / 3 / span 2 / 3;
+}
+
+.shenhe-quote {
+    grid-area: 1 / 4 / 1 / 4;
+}
+
+.zhongli-quote {
+    grid-area: 2 / 4 / 2 / 4;
+
+}
+
+/* News section styling */
+
+.news-flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px; /* Gap consistent across most grid and flex "containers" */
+    margin: 0 auto; /* Horizontally centers flex "container" on the page */
+    max-width: 1150px; /* Max width consistent across most grid and flex "containers" */
+}
+
+.news-flex a {
+    flex: 1 1 calc(50% - 25px); /* Two visual 'columns' at wide device widths */
+    text-decoration: none; /* Removes underline from all the text in the ".news-box"es */
+}
+
+.news-image {
+    border-radius: 15px; /* Border radius consistent with most others */
+    width: 150px;
+    height: 150px; /*Same width/height as the guide logos */
+}
+
+.news-box {
+    display: grid;
+    grid-template-columns: 1fr 3fr; /* Smaller space for images, more for text */
+    border-radius: 15px; /* Border radius consistent with most others */
+    padding: 10px 10px;
+    color: rgb(49, 49, 49);
+    background-color: white;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Consistent transitions */
+}
+
+.news-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 5px 10px rgba(44, 70, 108, .1);
+}
+
+.media-site p {
+    color: #22beb5;
+    font-size: .8em;
+    margin-bottom: 0px;
+}
+
+.news-box p {
+    margin: 10px;
+}
+
+/* Footer styling */
+footer {
+    padding: 15px 0;
+    color: white;
+    background-color: rgb(33, 33, 33);
+}
+
+footer p {
+    color: white;
+    margin: 0px; /* Overrides usual p padding, keeping footer small */
+    text-align: center;
+    bottom: 0px;
+}
+
+/* Media queries for tablets (iPad Air and smaller) */
+@media (max-width: 820px) {
+
+    /* General Styling */
+    header {
+        padding: 135px 30px; /* Reduced left and right padding to take up less space */
+    }
+    
+    section {
+        padding: 40px 30px; /* Reduced left and right padding to take up less space */
+    }
+
+    /* Video section styling */
+    .trailer-flex {
+        flex-direction: column;
+    }
+
+    .trailer-video-container {
+        margin: 0 auto; /* Horizontally centers container on the page */
+        width: 75%; /* Allows preview to scale with increasingly smaller screen width */
+        max-width: 500px; /* Prevents preview from getting too big and taking up too much space */
+    }
+
+    .trailer-text {
+        margin: 0 20px; /* Added left and right margin to prevent text from being too close to the edge */
+    }
+
+    /* Guides Styling */
+    .guides-flex {
+        flex-direction: column;
+    }
+
+    .guides-box {
+        margin: 0 auto; /* Horizontally centers guide "boxes" */
+        max-width: 600px; /* Keeps guide "boxes" from spanning almost full width, making text/image space more balanced */
+    }
+    
+
+    /* Quotes section styling */
+    .quotes-grid {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .quotes {
+        flex: 1 1 calc(50% - 25px) /* Two visual 'columns' so that text isn't too compressed */
+    }
+
+    /* News section styling */
+    .news-flex {
+        flex-direction: column;
+    }
+}
+
+/* Media queries for smaller devices (e.g. phones) */
+
+/* (Note: I recognize that the value for the max-width below isn't the suggested 576px breakpoint for mobile devices (or screens 
+with a width smaller than an iPad/tablet), but if the breakpoint is at a width smaller than 767px (which I am using because it is 
+just smaller than an iPad Mini, the text in grid and flex containers becomes too compressed and makes the page too long.) */
+
+@media (max-width: 767px) { /* Screen sizes smaller than iPad air */
+    header {
+        padding: 135px 20px; /* Further reduced left and right padding to take up less space */
+    }
+
+    section {
+        padding: 40px 20px; /* Further reduced left and right padding to take up less space */
+    }
+
+    .intro-grid {
+        grid-template-columns: 1fr; /* Makes intro and image and text "stack" so that both can be seen */
+        gap: 0px; /* Removed gap to reduce empty space */
+        padding: 0px; /* Removed padding to reduce empty space */
+    }
+
+    .intro-image-container {
+        order: -1; /* Intro image is shown above text rather than beneath it to balance visual and text elements */ 
+    }
+
+    .intro-image {
+        margin-top: 20px; /* Maintains equal distance between the image and the section title & subtitle, and the text below */
+        height: 300px; 
+        width: 300px; /* Smaller image and different aspect ratio to avoid making section too long vertically */
+    }
+
+    .intro-quote {
+        margin-top: 0px; /* Removed margin to reduce empty space */
+    }
+
+    .quotes-grid {
+        flex-direction: column; /* Prevents text from being too compressed and making section too long vertically */
+    }
+}
